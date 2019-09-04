@@ -1,0 +1,70 @@
+<!Doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact form</title>
+	<script type="text/javascript">
+		// defining the validations of cvform
+
+function cvForm() {
+				//calling the variables
+				
+				
+				if (document.getElementById('name').value == ""){
+					alert("Please, Enter Your Name");
+					
+					return false;
+				}
+					if (document.contactForm.Name.value.length <= 4){
+						alert("Name Too Short");
+					document.contactForm.Name.focus();
+					return false;
+					}
+				if (document.contactForm.email.value == ""){
+					alert("Please, Enter Your E-mail Address");
+					document.contactForm.email.focus();
+					return false;
+				}
+					if (document.contactForm.email.value.indexOf ("@",0)<0 || document.contactForm.email.value.indexOf ("@",0) > 1) {
+						alert ("Please, Enter A Valid E-mail Address");
+						email.focus();
+						return false;
+					}
+					if (document.contactForm.email.value.indexOf (".",0)<0 || document.contactForm.email.value.indexOf (".",0) > 1) {
+						alert ("Please, Enter A Valid E-mail Address");
+						email.focus();
+						return false;
+					}
+				if (document.contactForm.messagetitle.value == ""){
+					alert("Please, Enter A Title For Your Message");
+					document.contactForm.messagetitle.focus();
+					return false;
+				}
+				if (document.contactForm.message.value == ""){
+					alert("Please, Enter Your Message");
+					document.contactForm.message.focus();
+					return false;
+				}
+				if (document.contactForm.message.value.length <= 20){
+						alert("Name Too Short");
+					document.contactForm.Name.focus();
+					return false;
+					}
+			}
+	</script>
+</head>
+<body>
+	<form name="contactForm" onsubmit="return cvform()">
+						<h3>Send A Message</h3>
+						<p>Your Name: <input type="text" id="name" name="Name" ></p>
+						<p  id="nameError"></p>
+						Your E-mail Address: <input type="E-mail" name="email" id="email" required>
+						<p id="emailError"></p>
+						Message Title: <input type="text" name="messagetitle" id="messagetitle" required >
+						<p id="messagetitleError"></p>
+						Message: <textarea name="Message" id="message" required></textarea>
+						<p id="messageError"></p>
+						<input type="submit" name="submit" value="Send" onclick="cvform() ">
+	</form>
+</body>
+</html>
